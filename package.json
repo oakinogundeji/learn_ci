@@ -1,0 +1,26 @@
+{
+  "name": "learn_ci",
+  "version": "1.0.0",
+  "description": "a project to learn CI/CD by building a simple express app",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oakinogundeji/learn_ci.git"
+  },
+  "keywords": [
+    "travis",
+    "ci",
+    "cd",
+    "learn",
+    "demo"
+  ],
+  "author": "Telios WebDev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oakinogundeji/learn_ci/issues"
+  },
+  "homepage": "https://github.com/oakinogundeji/learn_ci#readme"
+}
