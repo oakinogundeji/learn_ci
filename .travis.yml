@@ -1,0 +1,11 @@
+---
+    dist: trusty
+    language: node_js
+    node_js:
+        - "6"
+    env:
+        - PORT=3030
+    install: npm install
+    script: npm test
+    git:
+        depth: 5
