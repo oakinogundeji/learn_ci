@@ -9,7 +9,8 @@ const
     express = require('express'),
     bParser = require('body-parser'),
     compression = require('compression'),
-    sendEmail = require('./utils/sendEmail');
+    sendEmail = require('./utils/sendEmail'),
+    readEmail = require('./utils/readEmail');
 //=============================================================================
 /**
  * instantiate express
@@ -54,6 +55,9 @@ app.post('/send', (req, res) => {
         msg = req.body.msg,
         recipient = req.body.recipient;
     return sendEmail(msg, recipient, res);
+});
+app.get('/read', (req, res) => {
+    return readEmail(res);
 });
 //=============================================================================
 /**

@@ -65,5 +65,24 @@ describe('Confirm base app is up and responds to test route', function () {
 
         });
     });
+    describe('GET /read', function () {
+        this.timeout(10000);
+        it('should return 200 status and json string with value containing Message count', function (done) {
+            request.
+                get('/read').
+                expect(200).
+                end(function (err, res) {
+                    if(err) {
+                        console.error(err);
+                        return done(err);
+                    }
+                    else {
+                        res.body.should.include('Message count');
+                        res.header['content-type'].should.include('application/json');
+                        return done();
+                    }
+                });
+        });
+    });
 });
 //=============================================================================
