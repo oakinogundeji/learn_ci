@@ -8,7 +8,8 @@ require('dotenv').config();
 const
     express = require('express'),
     bParser = require('body-parser'),
-    compression = require('compression');
+    compression = require('compression'),
+    sendEmail = require('./utils/sendEmail');
 //=============================================================================
 /**
  * instantiate express
@@ -47,6 +48,12 @@ app.use(compression());
 //=============================================================================
 app.get('/test', (req, res) => {
     return res.status(200).json('ok');
+});
+app.post('/send', (req, res) => {
+    const
+        msg = req.body.msg,
+        recipient = req.body.recipient;
+    return sendEmail(msg, recipient, res);
 });
 //=============================================================================
 /**
