@@ -48,7 +48,7 @@ app.use(compression());
  */
 //=============================================================================
 app.get('/test', (req, res) => {
-    return res.status(200).json('ok');
+    return res.status(200).json('yaaaaay');
 });
 app.post('/send', (req, res) => {
     const
